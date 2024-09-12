@@ -1,13 +1,20 @@
-import React from 'react';
-import { Element } from 'react-scroll';
-import pic1 from '../images/uoft-logo.png';
-import pic2 from '../images/heart-pulse.png';
-import pic3 from '../images/tools.png';
-import pic4 from '../images/online-shopping.png';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useEffect } from "react";
+import { Element } from "react-scroll";
+import pic1 from "../images/uoft-logo.png";
+import pic2 from "../images/heart-pulse.png";
+import pic3 from "../images/tools.png";
+import pic4 from "../images/online-shopping.png";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Projects = () => {
+  useEffect(() => {
+    const element = document.getElementById("projects");
+    if (window.location.hash === "#projects" && element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   const { ref: project1Ref, inView: project1InView } = useInView({
     threshold: 0.35,
     triggerOnce: true,
@@ -29,10 +36,19 @@ const Projects = () => {
   });
 
   return (
-    <Element name="projects" className="p-8 lg:px-16 min-h-screen flex flex-col items-center pt-32">
+    <Element
+      name="projects"
+      className="p-8 lg:px-16 min-h-screen flex flex-col items-center pt-32"
+      id="projects"
+    >
       <div className="w-full max-w-6xl text-left lg:text-left lg:mb-8 mb-4">
-        <h2 className="text-4xl font-bold mb-2 text-black text-center lg:text-left">Featured Projects</h2>
-        <p className="text-lg text-gray-700 text-center lg:text-left">Hover over any project to view its description and check out its implementation!</p>
+        <h2 className="text-4xl font-bold mb-2 text-black text-center lg:text-left">
+          Featured Projects
+        </h2>
+        <p className="text-lg text-gray-700 text-center lg:text-left">
+          Hover over any project to view its description and check out its
+          implementation!
+        </p>
       </div>
       <div className="max-w-6xl w-full grid sm:grid-cols-2 md:grid-cols-2 gap-8">
         {/* Project 1 */}
@@ -49,10 +65,16 @@ const Projects = () => {
           </div>
           <div className="opacity-0 group-hover:opacity-100 flex justify-center items-center flex-col bg-black bg-opacity-75 w-full h-full absolute inset-0 rounded-md pt-12 z-0">
             <p className="text-center lg:text-left text-white px-4">
-            A web application that displays insights about the busiest (and non-busiest) times and days on campus at the University of Toronto.
+              A web application that displays insights about the busiest (and
+              non-busiest) times and days on campus at the University of
+              Toronto.
             </p>
             <div className="pt-8 text-center">
-              <a href="https://app.danishmohammed.ca" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://ttv.danishmohammed.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="text-center rounded-lg px-4 py-3 m-2 bg-blue-700 text-white font-bold text-lg button">
                   Demo the App
                 </button>
@@ -75,10 +97,15 @@ const Projects = () => {
           </div>
           <div className="opacity-0 group-hover:opacity-100 flex justify-center items-center flex-col bg-black bg-opacity-75 w-full h-full absolute inset-0 rounded-md pt-12 z-0">
             <p className="text-center lg:text-left text-white px-4">
-            A machine learning analysis that predicts heart disease using Logistic Regression, Decision Trees, and Neural Networks.
+              A machine learning analysis that predicts heart disease using
+              Logistic Regression, Decision Trees, and Neural Networks.
             </p>
             <div className="pt-8 text-center">
-              <a href="https://github.com/danishmohammed/ml-cvd-prediction" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/danishmohammed/ml-cvd-prediction"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="text-center rounded-lg px-4 py-3 m-2 bg-blue-700 text-white font-bold text-lg button">
                   View on Colab
                 </button>
@@ -101,10 +128,15 @@ const Projects = () => {
           </div>
           <div className="opacity-0 group-hover:opacity-100 flex justify-center items-center flex-col bg-black bg-opacity-75 w-full h-full absolute inset-0 rounded-md pt-12 z-0">
             <p className="text-center lg:text-left text-white px-4">
-            A React Native mobile application that connects clients to service providers for handyman jobs.
+              A React Native mobile application that connects clients to service
+              providers for handyman jobs.
             </p>
             <div className="pt-8 text-center">
-              <a href="https://github.com/UofT-UTSC-CS-sandbox/final-term-project-quotis" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/UofT-UTSC-CS-sandbox/final-term-project-quotis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="text-center rounded-lg px-4 py-3 m-2 bg-blue-700 text-white font-bold text-lg button">
                   View on Github
                 </button>
@@ -127,10 +159,15 @@ const Projects = () => {
           </div>
           <div className="opacity-0 group-hover:opacity-100 flex justify-center items-center flex-col bg-black bg-opacity-75 w-full h-full absolute inset-0 rounded-md pt-12 z-0">
             <p className="text-center lg:text-left text-white px-4">
-              An Android App that digitalizes the mall experience, allowing browsing and purchase of products.
+              An Android App that digitalizes the mall experience, allowing
+              browsing and purchase of products.
             </p>
             <div className="pt-8 text-center">
-              <a href="https://github.com/tsids/mobile-mall" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/tsids/mobile-mall"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="text-center rounded-lg px-4 py-3 m-2 bg-blue-700 text-white font-bold text-lg button">
                   View on Github
                 </button>

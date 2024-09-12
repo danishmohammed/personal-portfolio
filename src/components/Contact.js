@@ -1,12 +1,25 @@
-import React from 'react';
-import { Element } from 'react-scroll';
-import { FaLinkedin, FaGithub, FaMedium } from 'react-icons/fa';
+import React, { useEffect } from "react";
+import { Element } from "react-scroll";
+import { FaLinkedin, FaGithub, FaMedium } from "react-icons/fa";
 
 const Contact = () => {
+  useEffect(() => {
+    const element = document.getElementById("contact");
+    if (window.location.hash === "#contact" && element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   return (
-    <Element name="contact" id="contact-section" className="p-8 lg:px-16 min-h-screen flex flex-col justify-center items-center bg-white">
+    <Element
+      name="contact"
+      id="contact"
+      className="p-8 lg:px-16 min-h-screen flex flex-col justify-center items-center bg-white"
+    >
       <div className="w-full max-w-md">
-        <h2 className="text-4xl font-bold mb-4 text-center text-black">Get in Contact</h2>
+        <h2 className="text-4xl font-bold mb-4 text-center text-black">
+          Get in Contact
+        </h2>
         <p className="mb-8 text-center text-black">
           Send me a message or connect with me on social media!
         </p>
@@ -58,13 +71,28 @@ const Contact = () => {
           </button>
         </form>
         <div className="flex justify-center space-x-8 mt-8">
-          <a href="https://www.linkedin.com/in/danish-m" target="_blank" rel="noopener noreferrer" className="icon">
+          <a
+            href="https://www.linkedin.com/in/danish-m"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+          >
             <FaLinkedin size={40} className="text-black" />
           </a>
-          <a href="https://github.com/danishmohammed" target="_blank" rel="noopener noreferrer" className="icon">
+          <a
+            href="https://github.com/danishmohammed"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+          >
             <FaGithub size={40} className="text-black" />
           </a>
-          <a href="https://danishmohammed57.medium.com" target="_blank" rel="noopener noreferrer" className="icon">
+          <a
+            href="https://danishmohammed57.medium.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+          >
             <FaMedium size={40} className="text-black" />
           </a>
         </div>

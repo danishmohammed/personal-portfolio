@@ -1,22 +1,33 @@
-import React from 'react';
-import profilePhoto from '../images/suit.png';
-import { Element, Link as ScrollLink } from 'react-scroll';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useEffect } from "react";
+import profilePhoto from "../images/suit.png";
+import { Element, Link as ScrollLink } from "react-scroll";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  useEffect(() => {
+    const element = document.getElementById("about");
+    if (window.location.hash === "#about" && element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+
   const { ref: textRef, inView: textInView } = useInView({
-    threshold: 0.20, // Trigger when 20% of the component is visible
+    threshold: 0.2, // Trigger when 20% of the component is visible
     triggerOnce: true,
   });
 
   const { ref: imageRef, inView: imageInView } = useInView({
-    threshold: 0.20, // Trigger when 20% of the component is visible
+    threshold: 0.2, // Trigger when 20% of the component is visible
     triggerOnce: true,
   });
 
   return (
-    <Element name="about" className="p-8 lg:px-16 min-h-screen flex flex-col justify-center items-center">
+    <Element
+      name="about"
+      className="p-8 lg:px-16 min-h-screen flex flex-col justify-center items-center"
+      id="about"
+    >
       <div className="max-w-6xl w-full flex flex-col lg:flex-row items-center lg:justify-between">
         <motion.div
           ref={textRef}
@@ -25,17 +36,34 @@ const About = () => {
           animate={textInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
-          <h2 className="text-4xl font-bold mb-4 text-center lg:text-left">About Me</h2>
+          <h2 className="text-4xl font-bold mb-4 text-center lg:text-left">
+            About Me
+          </h2>
           <p className="mb-8">
-            I'm a Computer Science student at UofT currently taking a deep dive into machine learning and full-stack development. I am passionate about leveraging Computer Science for <ScrollLink to="projects" spy={true} smooth={true} offset={-70} duration={500} className="text-blue-500 hover:underline cursor-pointer">real world applications</ScrollLink> and have acquired many skills along the way. I am proficient in technologies like Python, Java, C, HTML/CSS, JS (MERN Stack), Tensorflow, web scraping, data visualization, and git.
+            I'm a Computer Science student at UofT currently taking a deep dive
+            into machine learning and full-stack development. I am passionate
+            about leveraging Computer Science for{" "}
+            <ScrollLink
+              to="projects"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="text-blue-500 hover:underline cursor-pointer"
+            >
+              real world applications
+            </ScrollLink>{" "}
+            and have acquired many skills along the way. I am proficient in
+            technologies like Python, Java, C, HTML/CSS, JS (MERN Stack),
+            Tensorflow, web scraping, data visualization, and git.
           </p>
-          <p className="mb-4">
-            When I'm not coding, you can usually find me:
-          </p>
+          <p className="mb-4">When I'm not coding, you can usually find me:</p>
           <ul className="list-disc list-inside mb-10">
             <li>Praying at the Mosque</li>
             <li>Spending time with family & friends</li>
-            <li>Playing basketball, tennis, swimming, running, or working out</li>
+            <li>
+              Playing basketball, tennis, swimming, running, or working out
+            </li>
             <li>Watching a TV show or reading a good book</li>
           </ul>
           <div className="flex justify-center lg:justify-start">
@@ -58,7 +86,11 @@ const About = () => {
           animate={imageInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
         >
-          <img src={profilePhoto} alt="Danish Mohammed" className="rounded-full border-4 border-blue-700 w-64 lg:w-80" />
+          <img
+            src={profilePhoto}
+            alt="Danish Mohammed"
+            className="rounded-full border-4 border-blue-700 w-64 lg:w-80"
+          />
         </motion.div>
       </div>
       <style jsx>{`

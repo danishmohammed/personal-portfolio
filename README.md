@@ -19,4 +19,4 @@ You can visit the live website at: [danishmohammed.ca](https://danishmohammed.ca
 
 ## Contact
 
-Feel free to get in touch through the contact form on my website!
+Feel free to get in touch through the [contact form](https://danishmohammed.ca/#contact) on my website!
