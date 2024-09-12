@@ -76,7 +76,7 @@ const Projects = () => {
                 rel="noopener noreferrer"
               >
                 <button className="text-center rounded-lg px-4 py-3 m-2 bg-blue-700 text-white font-bold text-lg button">
-                  Demo the App
+                  Use the App
                 </button>
               </a>
             </div>
