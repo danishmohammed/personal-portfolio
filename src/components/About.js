@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import profilePhoto from "../images/suit.png";
+import profilePhoto from "../images/headshot.JPG";
 import { Element, Link as ScrollLink } from "react-scroll";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
