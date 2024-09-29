@@ -8,11 +8,11 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 // All the data for the articles
 const articlesData = [
   {
-    title: "How to Get Started in Machine Learning/AI",
+    title: "How I created the UofT Timetable Visualizer",
     description:
-      "Get the roadmap on how to get started in this rewarding yet daunting field.",
-    link: "https://medium.com",
-    tags: ["ML", "AI", "Beginner"],
+      "See how I created this app start to finish, and how you can make your own projects too.",
+    link: "https://danishmohammed57.medium.com/how-i-created-the-uoft-timetable-visualizer-96c0ef0eb6ad",
+    tags: ["Full-stack", "Beginner", "Web-scraping"],
   },
   {
     title: "How does Siri work?",

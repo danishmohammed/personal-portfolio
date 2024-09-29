@@ -73,7 +73,7 @@ const About = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="bg-blue-700 text-white px-4 py-2 rounded-full border-2 border-blue-900 hover:bg-blue-900 cursor-pointer button"
+              className="bg-blue-700 text-white px-4 py-2 rounded-full border-2 border-blue-700 hover:bg-blue-900 cursor-pointer button"
             >
               Contact me
             </ScrollLink>
